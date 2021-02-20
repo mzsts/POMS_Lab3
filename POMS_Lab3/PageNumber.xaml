@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:POMS_Lab3.RESX"
+             x:Class="POMS_Lab3.PageNumber"
+             Title="Lab3">
+    
+    <StackLayout Orientation="Vertical">
+        <Entry x:Name="entryNumber"
+                   Placeholder="{x:Static resources:Resource.entryNumberPlaceholder}"
+                   PlaceholderColor="Black"
+                   Completed="EntryNumber_Completed"/>
+
+        <StackLayout Orientation="Vertical"
+                         x:Name="buttonStack">
+
+            <Button x:Name="addButton"
+                        Text="x+2"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        Clicked="AddButton_Clicked"/>
+            <Button x:Name="mulButton"
+                        Text="x*2"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        Clicked="MulButton_Clicked"/>
+            <Button x:Name="sqrButton"
+                        Text="x^2"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        Clicked="SqrButton_Clicked"/>
+
+        </StackLayout>
+
+        <Frame BackgroundColor="Gray"
+               BorderColor="Black"
+               CornerRadius="25"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center">
+            <Label x:Name ="labelResult" 
+                   Text="{x:Static resources:Resource.lableResultText}"/>
+        </Frame>
+        <Button Text="{x:Static resources:Resource.changePageButtonText}"
+                VerticalOptions="EndAndExpand"
+                Clicked="ChengePageButton_Clicked"/>
+    </StackLayout>
+</ContentPage>

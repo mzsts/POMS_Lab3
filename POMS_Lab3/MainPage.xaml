@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:POMS_Lab3.RESX"
+             x:Class="POMS_Lab3.MainPage"
+             Title="Lab3">
+
+    <StackLayout Orientation="Vertical">
+        <Frame BackgroundColor="Blue" CornerRadius="0">
+            <Label Text="{x:Static resources:Resource.lableText}"
+                   FontSize="16"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+        </Frame>
+
+        <StackLayout Orientation="Vertical"
+                     x:Name="entryStack">
+            <Entry Placeholder="{x:Static resources:Resource.entryNamePlaceholder}"
+                    PlaceholderColor="Black"
+                    MaxLength="15"
+                    TextColor="Black"
+                    Keyboard="Text"
+                    ClearButtonVisibility="WhileEditing"
+                    Completed="OnNameEntryCompleted"
+                    HorizontalOptions="FillAndExpand"/>
+            <Entry Placeholder="{x:Static resources:Resource.entrySurnamePlaceholder}" 
+                   PlaceholderColor="Black"
+                   MaxLength="15"
+                   TextColor="Black"
+                   Keyboard="Text"
+                   ClearButtonVisibility="WhileEditing"
+                   Completed="OnSurnameEntryCompleted"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <DatePicker MinimumDate="01/01/1900"
+                        x:Name="dataPicker"
+                        TextColor="Black"
+                        DateSelected="OnDateSelected"
+                        HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <Button Text="{x:Static resources:Resource.buttonText}"
+                Clicked="OnButtonClicked"
+                VerticalOptions="CenterAndExpand"/>
+
+        <Button Text="{x:Static resources:Resource.changePageButtonText}"
+                Clicked="ChangePageButton_Clicked"
+                x:Name="changeButton"
+                VerticalOptions="EndAndExpand"/>
+        
+    </StackLayout>
+
+</ContentPage>
